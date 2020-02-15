@@ -606,7 +606,7 @@ def prolog_prove(goals, db):
             vars.extend(goal.get_vars())
         db['display_bindings'] = display_bindings
         prove_all(goals + [Relation('display_bindings', vars)], {}, db)
-    print 'No.'
+    print('No.')
 
 def display_bindings(vars, bindings, db, remaining):
     """
@@ -617,10 +617,10 @@ def display_bindings(vars, bindings, db, remaining):
     the remaining goals.
     """
     if not vars:
-        print 'Yes.'
+        print('Yes.')
     for var in vars:
-        print var, ':', var.lookup(bindings)
-    if raw_input('Continue? ').strip().lower() in ('yes', 'y'):
+        print(var, ':', var.lookup(bindings))
+    if input('Continue? ').strip().lower() in ('yes', 'y'):
         return False
     return prove_all(remaining, bindings, db)
 

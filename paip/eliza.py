@@ -40,12 +40,12 @@ def interact(prompt, rules, default_responses):
         try:
             # Remove the punctuation from the input and convert to upper-case
             # to simplify matching.
-            input = remove_punct(raw_input(prompt).upper())
+            input = remove_punct(input(prompt).upper())
             if not input:
                 continue
         except:
             break
-        print respond(rules, input, default_responses)
+        print(respond(rules, input, default_responses))
 
 
 def respond(rules, input, default_responses):
@@ -72,7 +72,7 @@ def respond(rules, input, default_responses):
 
     # Replace the variables in the output pattern with the values matched from
     # the input string.
-    for variable, replacement in replacements.items():
+    for variable, replacement in list(replacements.items()):
         replacement = ' '.join(switch_viewpoint(replacement))
         if replacement:
             response = response.replace('?' + variable, replacement)

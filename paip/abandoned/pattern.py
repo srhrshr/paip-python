@@ -3,7 +3,7 @@ class SyntaxError(Exception):
         self.msg = msg
         
     def __str__(msg):
-        print 'Syntax error: %s' % self.msg
+        print('Syntax error: %s' % self.msg)
 
 class Binding(object):
     def __init__(self, var, type=None):

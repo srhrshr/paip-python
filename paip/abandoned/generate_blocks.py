@@ -31,7 +31,7 @@ def generate(blocks):
                 ops.append(move_op(a, b, c))
             ops.append(move_op(a, 'table', b))
             ops.append(move_op(a, b, 'table'))
-    print json.dumps(ops, indent=4)
+    print(json.dumps(ops, indent=4))
 
 
 if __name__ == '__main__':
